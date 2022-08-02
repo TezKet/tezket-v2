@@ -1,0 +1,16 @@
+{
+  "name": "tezket-v2",
+  "version": "2.0.0",
+  "description": "NFT Ticket Smartcontact on Tezos.",
+  "scripts": {
+    "build:mligo": "node ./scripts/build.js"
+  },
+  "keywords": [],
+  "author": "TezKet",
+  "license": "MIT",
+  "devDependencies": {
+    "@taquito/signer": "^13.0.0",
+    "@taquito/taquito": "^13.0.0",
+    "fs": "^0.0.1-security"
+  }
+}
