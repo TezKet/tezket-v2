@@ -10,7 +10,8 @@ const faucet1 = require('../faucet1.json');
 // ];
 // ---------------------------------------------------------------------
 
-const rpc = 'https://ithacanet.ecadinfra.com';
+// const rpc = 'https://ithacanet.ecadinfra.com';
+const rpc = 'https://rpc.ghostnet.teztnets.xyz';
 const Tezos = new TezosToolkit(rpc);
 
 Tezos.setSignerProvider(InMemorySigner.fromFundraiser(faucet1.email, faucet1.password, faucet1.mnemonic.join(' ')))

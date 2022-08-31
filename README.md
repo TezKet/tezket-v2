@@ -1,6 +1,6 @@
-# tezket-v2
+# tezket-v2 (codename: SAMED)
 
-Deploy "NTFS_contract" (FA2) on Ghostnet (Ithacanet).
+Deploy "NTFS_contract" on Ghostnet (Ithacanet).
 
 ```
 nvm use v16.14.0
