@@ -20,11 +20,12 @@ const { char2Bytes, bytes2Char } = require("@taquito/utils");
 const rpc = 'https://rpc.ghostnet.teztnets.xyz';
 const status = 'https://api.ithaca.tzstats.com/explorer/status';
 
-const storeMeta = 'http://localhost:5000';
+// const storeMeta = 'http://localhost:5000';
+const storeMeta = 'https://tezket-emu-api-pplpa5ifea-wl.a.run.app';
 
 const app = express();
 
-const faucet1 = require('./faucet1.json');
+const faucet1 = require('./faucet2.json');
 const signer = InMemorySigner.fromFundraiser(faucet1.email, faucet1.password, faucet1.mnemonic.join(' '));
 const Tezos = new TezosToolkit(rpc);
 Tezos.setSignerProvider(signer);
@@ -33,12 +34,14 @@ let pinata;
 if (process.env.NODE_ENV === "production") {
   pinata = pinataSDK(process.env.PINATA_API_KEY || '', process.env.PINATA_SECRET_KEY || '');
 } else {
-  const PinataKeys = require("./PinataKeys.json");
+  const PinataKeys = require("./PinataKeys2.json");
   pinata = pinataSDK(PinataKeys.apiKey, PinataKeys.apiSecret);
 }
 
 const corsOptions = {
-    origin: ["http://localhost:19006"],
+    origin: ["http://localhost:19006", 
+      "http://10.42.0.87:19006", 
+      "https://tezket-test.web.app"],
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   };
 app.use(cors(corsOptions));
@@ -184,6 +187,8 @@ app.post('/mint', async function(req, res) {
         // fs.unlinkSync(nftpath);
 
         const metadata = {
+          version: 2,
+          ticketId: nftTicketId,
           name: eventInfo.data.name,
           description: eventInfo.data.description,
           symbol: "TZT"+"-"+req.body.ticketTarget,
@@ -246,6 +251,7 @@ app.post('/mint', async function(req, res) {
           contractAddress: req.body.contractAddress,
           minterAddress: req.body.minterAddress,
           ticketTarget: req.body.ticketTarget,
+          ticketId: nftTicketId,
           ipfs: {
             imageHash: pinnedFile.IpfsHash,
             metadataHash: pinnedMetadata.IpfsHash
@@ -290,4 +296,6 @@ app.get('/', async function (req, res) {
 const port = parseInt(process.env.PORT) || 8080;
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+    // console.log('server is listening on port', port);
+    
 });

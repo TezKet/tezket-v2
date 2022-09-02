@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 # Copying this separately prevents re-running npm install on every code change.
 COPY package*.json ./
 
-RUN apt-get update -y && apt-get install qrencode -y
+# RUN apt-get update -y && apt-get install qrencode -y
 
 # Install production dependencies.
 RUN npm install --only=production
@@ -19,4 +19,4 @@ RUN npm install --only=production
 COPY . ./
 
 # Run the web service on container startup.
-CMD [ "npm", "run", "start:minter" ]
+CMD [ "npm", "run", "start:pubsub" ]

@@ -15,6 +15,6 @@ python3 standalone.py
 gcloud init
 
 gcloud run deploy
-gcloud run deploy algochecker-api 
+gcloud run deploy tezket-emu-api 
 
 ```

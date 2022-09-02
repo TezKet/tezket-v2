@@ -22,6 +22,12 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 cors = CORS(app, resources={r"/ticket": {"origins": "http://localhost:19006"}})
 cors = CORS(app, resources={r"/events": {"origins": "http://localhost:19006"}})
 
+cors = CORS(app, resources={r"/ticket": {"origins": "http://10.42.0.87:19006"}})
+cors = CORS(app, resources={r"/events": {"origins": "http://10.42.0.87:19006"}})
+
+cors = CORS(app, resources={r"/ticket": {"origins": "https://tezket-test.web.app"}})
+cors = CORS(app, resources={r"/events": {"origins": "https://tezket-test.web.app"}})
+
 # export type EventInfo = {
 #   name: string;
 #   urlimg: String;
@@ -53,6 +59,14 @@ def add_ticket():
   db_ticket.add(request.get_json())
   return '', 200
 
+@app.route('/ticket/<ticketId>', methods=['PATCH'])
+def patch_ticket(ticketId):
+  db_ticket.update_by_query(
+    query=lambda x: x['ticketId'] == ticketId,
+    new_data=request.get_json()
+  )
+  return '', 200
+
 @app.route('/events/<ref>')
 def get_events_by_ref(ref):
   return jsonify(db_events.get_by_id(ref))
@@ -68,4 +82,8 @@ def add_events():
 
 
 
-app.run()
+# app.run()
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

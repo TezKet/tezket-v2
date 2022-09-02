@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "description": "NFT Ticket Smartcontact on Tezos.",
   "scripts": {
-    "build:mligo": "node ./scripts/build.js"
+    "build:mligo": "node ./scripts/build.js",
+    "start:minter": "node index.js"
   },
   "keywords": [],
   "author": "TezKet",
@@ -14,10 +15,16 @@
     "fs": "^0.0.1-security"
   },
   "dependencies": {
+    "@pinata/sdk": "^1.1.26",
+    "@taquito/signer": "^13.0.0",
+    "@taquito/taquito": "^13.0.0",
+    "fs": "^0.0.1-security",
     "axios": "^0.27.2",
     "cors": "^2.8.5",
     "express": "^4.18.1",
     "moment": "^2.29.4",
-    "randomstring": "^1.2.2"
+    "randomstring": "^1.2.2",
+    "typescript": "^4.8.2",
+    "ws": "^8.8.1"
   }
 }
