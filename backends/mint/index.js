@@ -187,7 +187,7 @@ app.post('/mint', async function(req, res) {
         // fs.unlinkSync(nftpath);
 
         const metadata = {
-          version: 2,
+          version: 3,
           ticketId: nftTicketId,
           name: eventInfo.data.name,
           description: eventInfo.data.description,

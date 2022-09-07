@@ -35,6 +35,25 @@ wss.on('connection', function connection(ws) {
 
             sockets.get(obj.signAddress)?.send(`SIGN:${obj.gateAddress}`);
 
+          } else if(obj.mode === "LIST") {
+
+            // sockets.get(obj.userAddress)?.send(`${}:${obj.gateAddress}`);
+
+            // for (const [key, value] of sockets) {
+            //   sockets.get(obj.userAddress)?.send(`${key}:${value}`);
+            // }
+
+            // console.log(sockets);
+
+            sockets.forEach((value: WebSocket, key: string) => {
+                sockets.get(obj.userAddress)?.send(`${key}`);
+            });
+
+            // for (let index in sockets) { 
+            //   console.log(index);
+            //   sockets.get(obj.userAddress)?.send(`${index}`);
+            // } 
+
           } else if(obj.mode === "USE") {
 
           //   {
