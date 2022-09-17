@@ -1,3 +1,0 @@
-# TezKet Presentations
-
-TBD.

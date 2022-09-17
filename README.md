@@ -1,25 +1,20 @@
 ---
-description: The TezKet Docs
+description: 'Codename: SAMED'
 ---
 
-# Overview
+# TezKet contracts v2
 
 TezKet is a platform to buy NFT ticket and use QR to control admittance at the gate.
 
-{% hint style="info" %}
-TezKet is live on Tezos Ghostnet. See <>
-{% endhint %}
+### **Doc**
 
-**Website**: <>\
-**Web** **App**: <>\
-**Github**: [https://github.com/tezket](https://github.com/tezket)\
-**Twittter**: [@tezketNFT](https://twitter.com/tezketNFT)
+Docs describing the transactions for each operation are located in the docs folder.
 
-This documentation describes the [design](design-doc.md) of the system, provides an explanation of the [core concepts](tezket-nft-basics.md), and documents the technical details to enable integration with the protocol.
+Further documentation is available at [https://docs.tezket.com/](https://docs.tezket.com/)
 
 ### Contributing
 
-Learn how to contribute to a project in [Code of Conducts](faq/code\_of\_conduct.md) and [Contributing](faq/contributing.md).
+Learn how to contribute to a project in [Code of Conducts](code\_of\_conduct.md) and [Contributing](contributing.md).
 
 ### Licensing
 
