@@ -30,4 +30,6 @@ gcloud run deploy
 gcloud run deploy tezket-api \
   --image gcr.io/$GOOGLE_CLOUD_PROJECT/tezket-api
 
+gcloud logging read "resource.type=cloud_run_revision AND resource.labels.service_name=tezket-api" --project $GOOGLE_CLOUD_PROJECT --limit 10
+
 ```
