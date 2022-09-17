@@ -1,32 +1,25 @@
 ---
-description: 'codename: SAMED'
+description: The TezKet Docs
 ---
 
-# TezKet v2
-
-NFTs are a decentralized way of tracking ownership, and a growing phenomenon in the digital asset.
-
-In the age of digital ticketing, when a ticket is often little more than a QR code on an invoice, can NFTs continue the tradition of the ticket surviving the event?
+# Overview
 
 TezKet is a platform to buy NFT ticket and use QR to control admittance at the gate.
 
-&#x20;[More](https://gist.github.com/ubinix-warun/fe48b4e72457b59cb01a732b6abde4c0).
+{% hint style="info" %}
+TezKet is live on Tezos Ghostnet. See <>
+{% endhint %}
 
-### Deploy "NTFS\_contract" on Ghostnet.
+**Website**: <>\
+**Web** **App**: <>\
+**Github**: [https://github.com/tezket](https://github.com/tezket)\
+**Twittter**: [@tezketNFT](https://twitter.com/tezketNFT)
 
-```
-nvm use v16.14.0
-npm install
-
-node ./script/build.js     # pls, install ligo compiler.
-node ./script/deploy.js
-
-node ./script/activateAccounts.js # (optional) use faucet1.json for deployer.
-```
+This documentation describes the [design](design-doc.md) of the system, provides an explanation of the [core concepts](tezket-nft-basics.md), and documents the technical details to enable integration with the protocol.
 
 ### Contributing
 
-Learn how to contribute to a project in [Code of Conducts](https://github.com/TezKet/tezket-v2/blob/main/docs/CODE\_OF\_CONDUCT.md) and [Contributing](https://github.com/TezKet/tezket-v2/blob/main/docs/CONTRIBUTING.md).
+Learn how to contribute to a project in [Code of Conducts](faq/code\_of\_conduct.md) and [Contributing](faq/contributing.md).
 
 ### Licensing
 
